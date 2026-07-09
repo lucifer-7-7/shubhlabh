@@ -1,0 +1,47 @@
+Act as an elite front-end developer and UI designer. Create an ultra-premium, high-contrast, single-page website for Shubh Labh Distributions using HTML, CSS, and vanilla JS.
+
+### Design System & Constraints (Inspired by Apple's premium layout and modern lookbooks)
+1. Color Palette: Pure White (#FFFFFF) for main canvas backgrounds, Apple Light Gray (#F5F5F7) for secondary boxes and alternate page sections, Obsidian Carbon (#1D1D1F) for body copy and dark outlines, and a striking Product Red (#E11D48) as the single pop accent color.
+2. Layout Style: Asymmetrical editorial layout. Segment content using generous whitespace offsets (140px section paddings) and thin, soft boundary borders (1px solid rgba(0, 0, 0, 0.08)) rather than heavy solid black lines.
+3. Cornering & Rounding (Apple iOS Reference): Apply Apple iOS standard rounded rectangles (12px border-radius) for all cards, forms, mockup boxes, and modals. Apply 8px border-radius for buttons, segmented tabs, and text input boxes.
+4. Input Fields: Form input fields must use a soft background fill (#F5F5F7) with rounded corners (8px), subtle padding, and transition border borders (from transparent to dark charcoal) upon focus. No raw under-lining boxes.
+5. Typography Reset: Enforce `text-decoration: none` on all link `<a>` tags globally to prevent default browser underlines on menus and buttons.
+6. Iconography: STRICTLY NO emojis. Use clean, professional, lightweight inline vector SVGs for all visual icons (such as location indicators, checklists, and network maps).
+7. Grid Alignments: Ensure all vertical lists (About stats, Product Categories, Why Us, Careers) align perfectly. Use a matching left-aligned column track of 80px width to host list index numbers (e.g. [01], [02] //) and text-align the arrow indicators (→) or buttons to the right-most column track to establish pixel-perfect grid borders.
+8. Mission List Bullets: Bullet numbers (e.g., '02 /') must never wrap the slash character to a second line. Enforce `white-space: nowrap` and `flex-shrink: 0` on bullet tags.
+9. Mobile Responsiveness & Spacing:
+   - Decrease typography sizing on mobile viewports (screen widths <= 768px): h1 (2.2rem), h2 (1.6rem), h3 (1.1rem), body text (0.84rem) and annotations (0.58rem) to preserve clean high-density layout.
+   - Intensify negative spacing on mobile: Apply tight -0.05em letter-spacing on h1, -0.04em on h2/h3, and -0.02em on paragraphs. Include slight vertical heading overlaps (e.g., script text margin-top: -6px) to build visual connections.
+   - Tighten section heights on mobile devices (padding: 75px 0) to maintain a neat page flow.
+   - Floating Hero annotations should stack dynamically underneath the text block and scale down (width: 290px on phones) to prevent horizontal scroll bars.
+   - Display vertical grid listings cleanly on mobile using simplified columns on <= 600px.
+10. Header Width: Align the header navigation bar container width exactly to the site content grid container width (max-width: 1100px) so left/right boundaries match perfectly. Apply a saturated blur backdrop-filter (20px) to the header.
+11. Preloader Loading Screen:
+    - Include a full-screen pure white loading overlay (`#preloader`) on initial page visit.
+    - Display centered regional Indian script greeting words in the accent red color (#E11D48) representing multiple languages of India (नमस्ते - Hindi, ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ - Punjabi, வணக்கம் - Tamil, নমস্কার - Bengali, నమస్కారం - Telugu, നമസ്കാരം - Malayalam, ನಮಸ್ಕಾರ - Kannada, નમસ્તે - Gujarati, नमस्कार - Marathi).
+    - Font sizes must be delicate and minimal (0.9rem on mobile, 1.4rem on desktop) to follow Apple's layout design system. Letter-spacing should be normal (0) to ensure readability of Indic script glyphs.
+    - Shuffled greetings order: "नमस्ते" must ALWAYS display first. Shuffled other languages randomly using a Fisher-Yates method for subsequent rotations.
+    - Animate the text in an infinite fade loop using GSAP opacity transitions (no 3D flips/rotations): hold current greeting visible (0.75s), fade-out current greeting (0.35s), swap text content *invisibly* at zero opacity, then fade-in the new word (0.35s).
+    - Lifecycle: The loader stays active until it completes one full cycle of all greetings (displaying all languages once), then fades out automatically.
+    - Interactive Bypass: The user can dismiss/skip the preloader instantly at any time by clicking, tapping, touching the screen, or pressing any key, immediately playing the main site entrance animations.
+12. Form Submissions to WhatsApp:
+    - Instead of backend APIs or AJAX submissions, form submissions (Promoter Registration, Career Application, Contact Us, and Newsletter subscription) are redirected directly to a WhatsApp chat using the `wa.me` URL syntax targeting the company number: `+91 748-35-26-536` (`https://wa.me/917483526536`).
+    - Capture form fields dynamically, format the payload using markdown bullet lists (bold titles e.g. `*Name*: [Name]`), encode the message using `encodeURIComponent`, and open the WhatsApp window in a new tab (`_blank`).
+    - File Uploads: Check file inputs (`#resume` and `#career-resume`) and grab the filename chosen by the user. Include the filename in the text payload (e.g. `*Attached Resume File*: resume.pdf`) and prompt the user to manually attach that file in the opened WhatsApp chat window.
+    - Show a success toast message indicating redirection and reset the form.
+13. Scroll & Animation: Integrate Locomotive Scroll and GSAP. Ensure all root sections and the footer have `data-scroll-section` tags to register scroll metrics, avoiding hidden or missing footers. Use ONLY minimal, macro animations (slow organic drift, opacity fades, line drawing).
+
+### Required 11-Section Flow
+1. Header: Saturated blur navigation bar, text-based logo with a bold black SHUBH LABH and a small flowing script "s", simple navigation links, and a capsule "Employee Login" button. All links have underlines removed.
+2. Hero Section: Pure white background. Bold heading: "Building India's Most Trusted" with a huge cursive line "Growth Network" in script font. Subtitle: "Shubh Labh Distributions empowers promoters, businesses, and customers by creating opportunities for sustainable growth across India." Custom inline SVG vector map of India in background. 
+   - Floating Annotations: Position a central red circle "SL" visual in center-right. Position scattered uppercase text blocks floating around the central visual. All styled inside CSS to allow responsive mobile scaling.
+3. About Us: "Who We Are" description on the left. On the right, a vertical stack of 4 numbered stat rows. Includes a category list with 6 row-items showing row-hover transitions and clean arrows (→).
+4. Our Vision: Split-section. Left: Vision statement. Right: Mission checklist numbered with clean script tags (01 /, 02 /) that do not wrap.
+5. Why Choose Us: 6 typographic list rows, divided by thin borders, containing numbers [ 01 ], [ 02 ] in red, with role headers and inline paragraphs.
+6. Join Network: "Your Growth Starts Here" section. On the right, an Apple standard mockup box containing a clean SVG network outline and a description.
+7. Promoter Form: A clean 2-column form inside a rounded container box (12px rounded). Fields: Name, Mobile, Email, State, District, City, Qualification, Occupation, Languages, Resume, Submit.
+8. Careers: Professional vertical row-list containing 5 job openings with Location, Department, and an arrow button (→) triggering a minimalist apply modal.
+9. How It Works (3-Column Stable Grid Timeline): Vertical timeline detailing onboarding steps. Formatted as 3-columns (Left content, Center node, Right content) to lock circles and text cards in place. The timeline progress bar fills with solid Product Red as the user scrolls.
+10. Leadership Message: Quote from Founder Shubhadas Shetty alongside a clean portrait placeholder shape in a rounded frame.
+11. Testimonials: Dynamic tab switcher using rounded Segmented control tabs for "Employee Success", "Promoter Success", and "Business Partners".
+12. Contact & Footer: Support info (Sector 18, Chandigarh, +91 748-35-26-536, shubhlabhdistributions@gmail.com), custom vector map graphic, quick links, newsletter form, and social media handles.
