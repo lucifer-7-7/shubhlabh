@@ -26,7 +26,7 @@ Act as an elite front-end developer and UI designer. Create an ultra-premium, hi
     - Interactive Bypass: The user can dismiss/skip the preloader instantly at any time by clicking, tapping, touching the screen, or pressing any key, immediately playing the main site entrance animations.
 12. Form Submissions to WhatsApp:
     - Instead of backend APIs or AJAX submissions, form submissions (Promoter Registration, Career Application, Contact Us, and Newsletter subscription) are redirected directly to a WhatsApp chat using the `wa.me` URL syntax targeting the company number: `+91 748-35-26-536` (`https://wa.me/917483526536`).
-    - Capture form fields dynamically, format the payload using markdown bullet lists (bold titles e.g. `*Name*: [Name]`), encode the message using `encodeURIComponent`, and open the WhatsApp window in a new tab (`_blank`).
+    - Capture form fields dynamically (checking exact HTML element IDs e.g. `#full-name` and `#mobile-number` on the promoter form), format the payload using markdown bullet lists (bold titles e.g. `*Name*: [Name]`), encode the message using `encodeURIComponent`, and open the WhatsApp window in a new tab (`_blank`).
     - File Uploads: Check file inputs (`#resume` and `#career-resume`) and grab the filename chosen by the user. Include the filename in the text payload (e.g. `*Attached Resume File*: resume.pdf`) and prompt the user to manually attach that file in the opened WhatsApp chat window.
     - Show a success toast message indicating redirection and reset the form.
 13. Scroll & Animation: Integrate Locomotive Scroll and GSAP. Ensure all root sections and the footer have `data-scroll-section` tags to register scroll metrics, avoiding hidden or missing footers. Use ONLY minimal, macro animations (slow organic drift, opacity fades, line drawing).
@@ -39,7 +39,7 @@ Act as an elite front-end developer and UI designer. Create an ultra-premium, hi
 4. Our Vision: Split-section. Left: Vision statement. Right: Mission checklist numbered with clean script tags (01 /, 02 /) that do not wrap.
 5. Why Choose Us: 6 typographic list rows, divided by thin borders, containing numbers [ 01 ], [ 02 ] in red, with role headers and inline paragraphs.
 6. Join Network: "Your Growth Starts Here" section. On the right, an Apple standard mockup box containing a clean SVG network outline and a description.
-7. Promoter Form: A clean 2-column form inside a rounded container box (12px rounded). Fields: Name, Mobile, Email, State, District, City, Qualification, Occupation, Languages, Resume, Submit.
+7. Promoter Form: A clean 2-column form inside a rounded container box (12px rounded). Fields: Name (id="full-name"), Mobile (id="mobile-number"), Email, State, District, City, Qualification, Occupation, Languages, Resume, Submit.
 8. Careers: Professional vertical row-list containing 5 job openings with Location, Department, and an arrow button (→) triggering a minimalist apply modal.
 9. How It Works (3-Column Stable Grid Timeline): Vertical timeline detailing onboarding steps. Formatted as 3-columns (Left content, Center node, Right content) to lock circles and text cards in place. The timeline progress bar fills with solid Product Red as the user scrolls.
 10. Leadership Message: Quote from Founder Shubhadas Shetty alongside a clean portrait placeholder shape in a rounded frame.

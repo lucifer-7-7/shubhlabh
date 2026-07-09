@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
         promoterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
+            const name = document.getElementById('full-name').value;
+            const phone = document.getElementById('mobile-number').value;
             const email = document.getElementById('email').value;
             const state = document.getElementById('state').value;
             const district = document.getElementById('district').value;
