@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 resumeName = resumeInput.files[0].name;
             }
             
-            const msg = `*PROMOTER REGISTRATION - SHUBH LABH*\n` +
+            const msg = `*JOB & DISTRIBUTION APPLICATION - SHUBH LABH*\n` +
                         `----------------------------------\n` +
                         `*Name*: ${name}\n` +
                         `*Mobile*: ${phone}\n` +
@@ -371,11 +371,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function rotateGreetings() {
         if (!greetingEl || preloaderDismissed) return;
         
+        greetingEl.textContent = greetings[greetingIndex % greetings.length];
+        gsap.set(greetingEl, { opacity: 1 });
+        
         const tl = gsap.timeline({
             onComplete: () => {
                 greetingsShownCount++;
-                if (greetingsShownCount >= 1) {
-                    // Instant fast dismissal after first greeting (~0.35s total)
+                greetingIndex++;
+                if (greetingsShownCount >= 4) {
                     dismissPreloader();
                 } else {
                     rotateGreetings();
@@ -383,8 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // 1. Hold current greeting visible (0.25s)
-        tl.to({}, { duration: 0.25 })
+        // 1. Hold current greeting visible (0.45s)
+        tl.to({}, { duration: 0.45 })
         // 2. Fade out current greeting (0.15s)
         .to(greetingEl, {
             opacity: 0,
