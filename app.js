@@ -43,17 +43,38 @@ try {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Mobile Menu Toggle
+    // 1. Mobile Menu Toggle & Click/Touch Outside Close
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
-    const navLinksList = navMenu.querySelector('.nav-links');
+    const navLinksList = navMenu ? navMenu.querySelector('.nav-links') : null;
 
-    mobileToggle.addEventListener('click', () => {
-        navLinksList.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
-        
-        if (scroller) scroller.update();
-    });
+    if (mobileToggle && navLinksList) {
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinksList.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+            if (scroller) scroller.update();
+        });
+
+        // Close menu automatically when clicking / tapping anywhere outside
+        document.addEventListener('click', (e) => {
+            if (navLinksList.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    navLinksList.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            }
+        });
+
+        document.addEventListener('touchstart', (e) => {
+            if (navLinksList.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    navLinksList.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            }
+        }, { passive: true });
+    }
 
     // 2. Smooth Scroll to Anchors
     document.querySelectorAll('[data-scroll-to]').forEach(link => {
@@ -353,8 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const tl = gsap.timeline({
             onComplete: () => {
                 greetingsShownCount++;
-                if (greetingsShownCount >= greetings.length) {
-                    // Completed one full cycle of all regional languages - dismiss automatically
+                if (greetingsShownCount >= 1) {
+                    // Instant fast dismissal after first greeting (~0.35s total)
                     dismissPreloader();
                 } else {
                     rotateGreetings();
@@ -362,24 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // 1. Hold current greeting visible
-        tl.to({}, { duration: 0.75 })
-        // 2. Fade out current greeting
+        // 1. Hold current greeting visible (0.25s)
+        tl.to({}, { duration: 0.25 })
+        // 2. Fade out current greeting (0.15s)
         .to(greetingEl, {
             opacity: 0,
-            duration: 0.35,
+            duration: 0.15,
             ease: "power2.out"
-        })
-        // 3. Swap word text while completely invisible
-        .call(() => {
-            greetingIndex = (greetingIndex + 1) % greetings.length;
-            greetingEl.textContent = greetings[greetingIndex];
-        })
-        // 4. Fade in new greeting
-        .to(greetingEl, {
-            opacity: 1,
-            duration: 0.35,
-            ease: "power2.in"
         });
     }
 
@@ -531,6 +541,100 @@ document.addEventListener('DOMContentLoaded', () => {
             pathLength = progressPath.getTotalLength();
             progressPath.style.strokeDasharray = pathLength;
         });
+    }
+
+    // -------------------------------------------------------------
+    // Stacked Testimonials Deck Auto-Switcher
+    // -------------------------------------------------------------
+    const stackedCards = document.querySelectorAll('.stacked-card');
+    const stackedDots = document.querySelectorAll('.stacked-dot');
+    const prevBtn = document.getElementById('testimonialPrev');
+    const nextBtn = document.getElementById('testimonialNext');
+
+    if (stackedCards.length > 0) {
+        let currentIndex = 0;
+        let autoSlideTimer;
+
+        function showSlide(index) {
+            currentIndex = (index + stackedCards.length) % stackedCards.length;
+
+            stackedCards.forEach((card, i) => {
+                card.classList.remove('active', 'prev', 'next');
+                if (i === currentIndex) {
+                    card.classList.add('active');
+                } else if (i === (currentIndex - 1 + stackedCards.length) % stackedCards.length) {
+                    card.classList.add('prev');
+                } else {
+                    card.classList.add('next');
+                }
+            });
+
+            stackedDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideTimer = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideTimer) clearInterval(autoSlideTimer);
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                showSlide(currentIndex - 1);
+                startAutoSlide();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                showSlide(currentIndex + 1);
+                startAutoSlide();
+            });
+        }
+
+        stackedDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const slideIdx = parseInt(dot.getAttribute('data-slide'));
+                showSlide(slideIdx);
+                startAutoSlide();
+            });
+        });
+
+        showSlide(0);
+        startAutoSlide();
+    }
+
+    // Mobile Testimonials Cross-Fade Infinity Loop (Forward Only)
+    const mobileCards = document.querySelectorAll('.testimonial-card');
+    if (mobileCards.length > 0) {
+        let mobileCardIndex = 0;
+        
+        function rotateMobileTestimonial() {
+            if (window.innerWidth <= 768) {
+                mobileCards.forEach((card, idx) => {
+                    if (idx === mobileCardIndex) {
+                        card.classList.add('mobile-active');
+                    } else {
+                        card.classList.remove('mobile-active');
+                    }
+                });
+                mobileCardIndex = (mobileCardIndex + 1) % mobileCards.length;
+            } else {
+                mobileCards.forEach(card => card.classList.remove('mobile-active'));
+            }
+        }
+
+        rotateMobileTestimonial();
+        setInterval(rotateMobileTestimonial, 4000);
     }
 
     if (scroller) {

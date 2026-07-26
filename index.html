@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubh Labh Distributions | Building India's Most Trusted Growth Network</title>
+    <title>Shubh Labh Distributions | FMCG Promoter Network & Income Opportunities in India</title>
     
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Shubh Labh Distributions is a premier promoter-driven business development and distribution network. Empowering individuals, professionals, and brands across India.">
-    <meta name="keywords" content="Shubh Labh, Shubh Labh Distributions, Promoter Network India, Career Development, Retail Distribution Network, Business Growth">
+    <!-- Comprehensive SEO Meta Tags (Tier 3 & Tier 4 People Focused) -->
+    <meta name="description" content="Shubh Labh Distributions empowers everyday individuals, homemakers, and youth across Tier 3 & Tier 4 towns in India with flexible earning opportunities, retail promoter training, and trusted FMCG distribution.">
+    <meta name="keywords" content="Shubh Labh Distributions, FMCG distribution India, promoter jobs Karnataka, Tier 3 Tier 4 income opportunities, homemaker work from home, retail promoter network, direct marketing jobs Bengaluru Mysore Hubballi Mangaluru, small business distributor India">
     <meta name="author" content="Shubh Labh Distributions">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="IN-KA">
+    <meta name="geo.placename" content="Karnataka, India">
     
+    <!-- Open Graph (OG) / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shubh Labh Distributions">
+    <meta property="og:title" content="Shubh Labh Distributions | Empowering Tier 3 & 4 India with Real Growth">
+    <meta property="og:description" content="Join 10,000+ promoters and business partners building India's most trusted FMCG growth network. Flexible earnings, product training, and career progression across Karnataka.">
+    <meta property="og:image" content="imgs/meta_tag_img.jpg">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shubh Labh Distributions | Promoter Network & Retail Opportunities">
+    <meta name="twitter:description" content="Empowering everyday people across Tier 3 & 4 Indian cities with sustainable income and top-tier FMCG distribution.">
+    <meta name="twitter:image" content="imgs/meta_tag_img.jpg">
+    
+    <!-- Structured Data (JSON-LD) for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Shubh Labh Distributions",
+      "description": "Building India's most trusted promoter-driven FMCG distribution network across Tier 3 & Tier 4 cities.",
+      "email": "Info@shubhlabhdistributions.com",
+      "telephone": "+91-8240633147",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      },
+      "areaServed": "India",
+      "knowsAbout": ["FMCG Distribution", "Retail Promoter Training", "Homemaker Earnings", "Direct Sales Network"]
+    }
+    </script>
+
     <!-- Google Fonts: Plus Jakarta Sans, Inter, Pinyon Script -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +54,13 @@
     <!-- Locomotive Scroll CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     
+    <!-- Favicon Package (favicon_io) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -34,13 +77,11 @@
     <header>
         <div class="nav-container">
             <a href="#home" class="logo-wrapper" data-scroll-to>
-                <div class="logo-icon">
-                    S
-                </div>
-                <div class="logo-text">
+                <img src="imgs/c86b3fe3-6fb5-4a8b-8ae7-ba5879a8d2e1.png" alt="Shubh Labh Distributions" class="nav-brand-logo-img">
+                <!-- <div class="logo-text">
                     <span class="logo-title">SHUBH LABH</span>
                     <span class="logo-subtitle">DISTRIBUTIONS</span>
-                </div>
+                </div> -->
             </a>
             
             <nav id="nav-menu">
@@ -76,13 +117,42 @@
             <section id="home" class="hero-sec" data-scroll-section>
                 <!-- Subtle grid background lines -->
                 <svg viewBox="0 0 800 800" class="hero-background-svg" xmlns="http://www.w3.org/2000/svg">
-                    <pattern id="grid-dots" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="1" fill="#000000" opacity="0.05"/>
-                    </pattern>
+                    <defs>
+                        <pattern id="grid-dots" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="1" fill="#000000" opacity="0.05"/>
+                        </pattern>
+                        <!-- Glow filter for India border line -->
+                        <filter id="border-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
                     <rect width="100%" height="100%" fill="url(#grid-dots)" />
                     
-                    <!-- Abstract thin map path -->
-                    <path d="M 380 120 L 410 110 L 430 140 L 440 180 L 480 200 L 510 230 L 490 260 L 500 300 L 540 320 L 600 310 L 640 330 L 610 370 L 570 360 L 540 380 L 520 410 L 490 430 L 470 480 L 440 520 L 430 580 L 420 630 L 410 680 L 390 650 L 380 600 L 370 540 L 350 490 L 330 450 L 310 420 L 290 400 L 260 380 L 230 360 L 220 330 L 250 310 L 280 290 L 300 260 L 320 230 L 330 200 L 340 160 Z" fill="none" stroke="#E5E7EB" stroke-width="1.2" />
+                    <!-- Geometrically Accurate India Map vector outline path -->
+                    <path id="india-border-path" d="M 400 75 L 418 95 L 445 125 L 438 155 L 465 195 L 490 205 L 525 215 L 532 195 L 542 215 L 565 215 L 620 200 L 660 210 L 675 245 L 665 290 L 640 320 L 625 335 L 610 310 L 585 305 L 600 275 L 575 275 L 560 320 L 540 370 L 510 430 L 480 480 L 455 545 L 440 600 L 420 660 L 400 715 L 385 675 L 365 620 L 350 560 L 335 510 L 320 460 L 300 410 L 275 385 L 260 395 L 215 415 L 185 400 L 140 345 L 170 325 L 210 315 L 235 280 L 265 240 L 295 200 L 330 160 L 345 120 L 370 90 Z" fill="none" stroke="#D1D5DB" stroke-width="1.8" stroke-dasharray="6 4" />
+                    
+                    <!-- Animated Delivery Truck travelling along India map border -->
+                    <g class="moving-truck-group">
+                        <!-- Outer pulsing aura circle -->
+                        <circle cx="0" cy="0" r="14" fill="#E11D48" opacity="0.25">
+                            <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.35;0.08;0.35" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Solid red badge circle -->
+                        <circle cx="0" cy="0" r="11" fill="#E11D48" />
+                        <!-- Crisp white delivery truck icon SVG -->
+                        <g transform="translate(-7, -6) scale(0.65)">
+                            <path d="M1 3h10v8H1z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M11 6h4l3 3v3h-7z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
+                            <circle cx="4.5" cy="11.5" r="1.5" fill="#FFFFFF"/>
+                            <circle cx="15" cy="11.5" r="1.5" fill="#FFFFFF"/>
+                        </g>
+                        <!-- Motion along path -->
+                        <animateMotion dur="22s" repeatCount="indefinite" rotate="auto">
+                            <mpath href="#india-border-path"/>
+                        </animateMotion>
+                    </g>
                 </svg>
 
                 <div class="container" style="position: relative;">
@@ -104,7 +174,6 @@
                             <a href="#careers" class="btn btn-outline-white" data-scroll-to>Explore Careers</a>
                         </div>
                         <div class="hero-tagline-footer">
-                            <div class="hero-tagline-line"></div>
                             <div class="hero-tagline-text uppercase tracking-wide">Your Growth, Our Responsibility</div>
                             <div class="hero-tagline-hindi">| आपकी तरक्की, हमारी ज़िम्मेदारी</div>
                         </div>
@@ -120,22 +189,22 @@
                         <!-- Floating Text Annotations -->
                         <div class="anno-text anno-top">
                             SHUBH LABH DISTRIBUTIONS<br>
-                            <span class="anno-sub">ESTD 2026 / CHANDIGARH</span>
+                            <span class="anno-sub">ESTD 2026 • KARNATAKA</span>
                         </div>
                         <div class="anno-text anno-mid-left">
                             10,000+ PROMOTERS<br>
                             <span class="anno-sub">EMPOWERED ONBOARD</span>
                         </div>
                         <div class="anno-text anno-mid-right">
-                            2 LAKH+ CUSTOMERS<br>
-                            <span class="anno-sub">TRUSTED NETWORK</span>
+                            10,000+ TARGET CUSTOMERS<br>
+                            <span class="anno-sub">AIMING FOR CUSTOMERS</span>
                         </div>
                         <div class="anno-text anno-bot-left">
-                            20+ STATES COVERED<br>
+                            10+ STATES COVERED<br>
                             <span class="anno-sub">PAN INDIA REACH</span>
                         </div>
                         <div class="anno-text anno-bot-right">
-                            150+ PRODUCTS<br>
+                            50+ PRODUCTS<br>
                             <span class="anno-sub">QUALITY RETAILING</span>
                         </div>
                     </div>
@@ -164,56 +233,174 @@
                             </div>
                             <div class="stat-row">
                                 <span class="stat-idx">[02]</span>
-                                <span class="stat-number">2 Lakh+</span>
-                                <span class="stat-label">Happy Customers</span>
+                                <span class="stat-number">10,000+</span>
+                                <span class="stat-label">Aiming For Customers</span>
                             </div>
                             <div class="stat-row">
                                 <span class="stat-idx">[03]</span>
-                                <span class="stat-number">150+</span>
+                                <span class="stat-number">50+</span>
                                 <span class="stat-label">Quality Products</span>
                             </div>
                             <div class="stat-row">
                                 <span class="stat-idx">[04]</span>
-                                <span class="stat-number">20+</span>
+                                <span class="stat-number">10+</span>
                                 <span class="stat-label">States Covered</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Full-Width Office Image Banner -->
+                    <div class="about-office-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Shubh Labh Team Working Happily in Office" class="about-office-img">
+                    </div>
+
                     <!-- Product Categories -->
                     <div class="categories-wrapper" id="categories-anchor">
                         <span class="section-label">Inventory Scope</span>
-                        <h3 class="categories-title">Our Product Categories</h3>
-                        <div class="categories-list">
-                            <div class="category-row">
-                                <span class="category-idx">01 //</span>
-                                <span class="category-name">Personal Care</span>
-                                <span class="category-arrow">→</span>
+                        <h3 class="categories-title">Our Product <span class="script-text text-accent">Categories</span></h3>
+                        <div class="category-cards-grid">
+                            <!-- Card 1: Chocolate -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=600&q=80" alt="Chocolate" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Rich Artisanal Chocolates</h4>
+                                    <div class="category-card-sub">Premium Confectionery</div>
+                                    <p class="category-card-desc">Handcrafted chocolates and gourmet confectionery made with rich cocoa.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="category-row">
-                                <span class="category-idx">02 //</span>
-                                <span class="category-name">Home Care</span>
-                                <span class="category-arrow">→</span>
+
+                            <!-- Card 2: Perfume -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80" alt="Perfume" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Luxury Signature Perfumes</h4>
+                                    <div class="category-card-sub">Long-lasting Fragrances</div>
+                                    <p class="category-card-desc">Elegantly crafted long-lasting perfumes and fine body spray fragrances.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="category-row">
-                                <span class="category-idx">03 //</span>
-                                <span class="category-name">Health & Wellness</span>
-                                <span class="category-arrow">→</span>
+
+                            <!-- Card 3: Personal Care -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Personal Care" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Personal Hygiene &amp; Care</h4>
+                                    <div class="category-card-sub">Daily Skin Essentials</div>
+                                    <p class="category-card-desc">Gentle skin wellness soaps, body washes, and daily hygiene products.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="category-row">
-                                <span class="category-idx">04 //</span>
-                                <span class="category-name">Beauty Care</span>
-                                <span class="category-arrow">→</span>
+
+                            <!-- Card 4: Home Care -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="Home Care" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Household &amp; Surface Care</h4>
+                                    <div class="category-card-sub">Home Cleaning</div>
+                                    <p class="category-card-desc">High-performance cleaning solutions, detergents, and sanitizers.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="category-row">
-                                <span class="category-idx">05 //</span>
-                                <span class="category-name">Nutrition</span>
-                                <span class="category-arrow">→</span>
+
+                            <!-- Card 5: Health & Wellness -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Health & Wellness" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Health &amp; Nutrition</h4>
+                                    <div class="category-card-sub">Daily Vitality</div>
+                                    <p class="category-card-desc">Herbal wellness supplements, immunity boosters, and health drinks.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="category-row">
-                                <span class="category-idx">06 //</span>
-                                <span class="category-name">More Categories</span>
-                                <span class="category-arrow">→</span>
+
+                            <!-- Card 6: Beauty Care -->
+                            <div class="category-card">
+                                <div class="category-card-img-wrap">
+                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="Beauty Care" class="category-card-img">
+                                    <div class="category-brand-badge">
+                                        <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
+                                    </div>
+                                    <div class="category-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="category-card-content">
+                                    <h4 class="category-card-title">Cosmetics &amp; Beauty Care</h4>
+                                    <div class="category-card-sub">Glow &amp; Care</div>
+                                    <p class="category-card-desc">Glow creams, herbal lip balms, and premium cosmetic care range.</p>
+                                    <div class="category-card-action">
+                                        <a href="#register" class="category-btn-pill" data-scroll-to>Explore Range ↗</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -221,38 +408,51 @@
             </section>
 
             <!-- 3. Our Vision & Mission - Page Spread -->
-            <section id="vision" class="vision-mission-sec" data-scroll-section>
+            <section id="mission" class="vision-mission-sec" data-scroll-section>
                 <div class="container">
-                    <div class="vision-mission-grid">
-                        <div class="vision-box">
-                            <span class="section-label">Our Destination</span>
-                            <h2>Our Vision</h2>
-                            <p class="vision-text">
-                                To become India's most trusted promoter-driven distribution organization, creating growth opportunities for thousands of professionals and delivering value to businesses and customers alike.
-                            </p>
+                    <div class="vision-block">
+                        <span class="section-label">Core Purpose</span>
+                        <h2 class="section-title">Our <span class="script-text text-accent">Vision</span></h2>
+                        <p class="lead-p vision-lead">
+                            To become one of India's most trusted FMCG, distribution, and direct marketing companies by building an interconnected network of 10,000+ empowered promoters and reaching millions of satisfied consumers.
+                        </p>
+                    </div>
+
+                    <div class="mission-block">
+                        <div class="mission-header">
+                            <span class="section-label">Strategic Goals</span>
+                            <h2 class="section-title">Our <span class="script-text text-accent">Mission</span></h2>
                         </div>
-                        <div class="mission-box">
-                            <span class="section-label">Our Objectives</span>
-                            <h2>Our Mission</h2>
-                            <ul class="mission-list">
-                                <li class="mission-item">
-                                    <span class="mission-bullet">01 /</span>
-                                    <div class="mission-text-item">Deliver affordable, quality products to consumers.</div>
-                                </li>
-                                <li class="mission-item">
-                                    <span class="mission-bullet">02 /</span>
-                                    <div class="mission-text-item">Create sustainable business opportunities for retailers and distributors.</div>
-                                </li>
-                                <li class="mission-item">
-                                    <span class="mission-bullet">03 /</span>
-                                    <div class="mission-text-item">Generate employment across sales, operations, marketing, and administration.</div>
-                                </li>
-                                <li class="mission-item">
-                                    <span class="mission-bullet">04 /</span>
-                                    <div class="mission-text-item">Build a transparent and technology-driven organization.</div>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="mission-grid-list">
+                            <li>
+                                <span class="m-num">[ 01 ]</span>
+                                <div>
+                                    <h4>Promoter Empowerment</h4>
+                                    <p>Create transparent, skill-based earnings and leadership opportunities across Karnataka and India.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="m-num">[ 02 ]</span>
+                                <div>
+                                    <h4>Brand Quality &amp; Trust</h4>
+                                    <p>Deliver top-tier daily essentials, chocolates, and perfumes directly to consumer households.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="m-num">[ 03 ]</span>
+                                <div>
+                                    <h4>Pan-India Infrastructure</h4>
+                                    <p>Establish robust logistics, regional hubs, and promoter training centers in all major states.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="m-num">[ 04 ]</span>
+                                <div>
+                                    <h4>Consumer Satisfaction</h4>
+                                    <p>Provide authentic value, competitive pricing, and personalized door-to-door customer care.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -261,7 +461,7 @@
             <section id="why" class="why-sec" data-scroll-section>
                 <div class="container">
                     <span class="section-label">Core Values</span>
-                    <h2 class="section-title">Why Choose Shubh Labh</h2>
+                    <h2 class="section-title">Why Choose <span class="script-text text-accent">Shubh Labh</span></h2>
                     
                     <div class="why-list">
                         <div class="why-row">
@@ -282,7 +482,7 @@
                         <div class="why-row">
                             <span class="why-idx">[ 04 ]</span>
                             <h3>Pan India Expansion</h3>
-                            <p>With footprints expanding continuously, you're connected to a massive network spanning over 20+ states.</p>
+                            <p>With footprints expanding continuously, you're connected to a massive network spanning over 10+ states.</p>
                         </div>
                         <div class="why-row">
                             <span class="why-idx">[ 05 ]</span>
@@ -304,7 +504,7 @@
                     <div class="join-grid">
                         <div class="join-left">
                             <span class="section-label">Build Your Career</span>
-                            <h2>Your Growth Starts Here</h2>
+                            <h2>Your Growth <span class="script-text text-accent">Starts Here</span></h2>
                             <p>
                                 Whether you're a fresher, experienced professional, student, homemaker, or entrepreneur, Shubh Labh Distributions provides an opportunity to become part of a growing nationwide network.
                             </p>
@@ -438,7 +638,7 @@
             <section id="careers" class="careers-sec" data-scroll-section>
                 <div class="container">
                     <span class="section-label">Join Our Corporate Team</span>
-                    <h2 class="section-title">Career Opportunities</h2>
+                    <h2 class="section-title">Career <span class="script-text text-accent">Opportunities</span></h2>
                     <p style="max-width: 600px; margin-bottom: 30px;">We are hiring talented, self-motivated professionals who seek to lead business, operations, and promotional strategy inside one of India's fast-growing startup setups.</p>
                     
                     <div class="careers-list">
@@ -453,7 +653,7 @@
                                 <span class="career-icon-inline">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </span>
-                                Chandigarh (HQ)
+                                Bengaluru / Mysuru, Karnataka
                             </span>
                             <span class="career-details">
                                 <span class="career-icon-inline">
@@ -477,7 +677,7 @@
                                 <span class="career-icon-inline">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </span>
-                                Chandigarh / Pan India
+                                Hubballi / Mangaluru, Karnataka
                             </span>
                             <span class="career-details">
                                 <span class="career-icon-inline">
@@ -501,7 +701,7 @@
                                 <span class="career-icon-inline">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </span>
-                                Multiple States
+                                Hubballi, Mangaluru, Bengaluru, Mysuru &amp; Other Cities in Karnataka
                             </span>
                             <span class="career-details">
                                 <span class="career-icon-inline">
@@ -525,7 +725,7 @@
                                 <span class="career-icon-inline">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </span>
-                                Chandigarh (HQ)
+                                Bengaluru / Mangaluru, Karnataka
                             </span>
                             <span class="career-details">
                                 <span class="career-icon-inline">
@@ -549,7 +749,7 @@
                                 <span class="career-icon-inline">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </span>
-                                Chandigarh (HQ)
+                                Bengaluru / Mysuru, Karnataka
                             </span>
                             <span class="career-details">
                                 <span class="career-icon-inline">
@@ -570,7 +770,7 @@
                 <div class="container">
                     <div style="text-align: center; margin-bottom: 60px;">
                         <span class="section-label">Your Path to Success</span>
-                        <h2 class="section-title" style="display: inline-block;">How It Works</h2>
+                        <h2 class="section-title" style="display: inline-block;">How It <span class="script-text text-accent">Works</span></h2>
                     </div>
                     
                     <div class="timeline-wrapper">
@@ -647,7 +847,7 @@
             </section>
 
             <!-- 9. Leadership Message -->
-            <section id="leadership" class="leader-sec" data-scroll-section>
+            <section id="leadership" class="leader-sec" style="display: none;" data-scroll-section>
                 <div class="container">
                     <div class="leader-grid">
                         <div class="leader-image-box">
@@ -677,43 +877,52 @@
             <!-- 10. Testimonials -->
             <section id="testimonials" class="testimonials-sec" data-scroll-section>
                 <div class="container">
-                    <div style="text-align: center; margin-bottom: 40px;">
+                    <div style="text-align: center; margin-bottom: 50px;">
                         <span class="section-label">Success Stories</span>
-                        <h2 class="section-title" style="display: inline-block;">What People Say</h2>
+                        <h2 class="section-title">What People <span class="script-text text-accent">Say</span></h2>
+                        <p style="max-width: 540px; margin: 12px auto 0 auto; font-size: 0.95rem; color: var(--text-secondary);">Real perspectives from our team, promoters, and business partners across India.</p>
                     </div>
 
-                    <div class="testimonials-tabs">
-                        <button class="tab-btn active" data-tab="employee">Employee Success</button>
-                        <button class="tab-btn" data-tab="promoter">Promoter Success</button>
-                        <button class="tab-btn" data-tab="partner">Business Partners</button>
-                    </div>
+                    <div class="testimonials-grid">
+                        <!-- Card 1: Corporate Team -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-top">
+                                <span class="testimonial-category">Corporate Team</span>
+                            </div>
+                            <blockquote class="testimonial-body">
+                                "Operating inside the corporate office in Karnataka has been a transformational journey. The transparent working culture and constant focus on career development keep me motivated every day."
+                            </blockquote>
+                            <div class="testimonial-footer">
+                                <div class="author-name">Kavitha Rao</div>
+                                <div class="author-role">Human Resources Specialist • Bengaluru</div>
+                            </div>
+                        </div>
 
-                    <div class="testimonials-container">
-                        <div class="tab-panel active" id="tab-employee">
-                            <p class="testimonial-quote">
-                                "Operating inside the corporate head office at Chandigarh has been a transformational journey. The transparent working culture and constant focus on professional career development keep me highly motivated."
-                            </p>
-                            <div class="testimonial-author">
-                                <h4>Ramanpreet Kaur</h4>
-                                <p>Human Resources Specialist</p>
+                        <!-- Card 2: Promoter Network -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-top">
+                                <span class="testimonial-category">Promoter Network</span>
+                            </div>
+                            <blockquote class="testimonial-body">
+                                "As a homemaker looking for flexible earnings, Shubh Labh provided the perfect training and product range. Today I coordinate sales across multiple districts in Karnataka, feeling completely self-reliant."
+                            </blockquote>
+                            <div class="testimonial-footer">
+                                <div class="author-name">Pavitra Patil</div>
+                                <div class="author-role">Certified Senior Promoter • Hubballi &amp; Mysuru</div>
                             </div>
                         </div>
-                        <div class="tab-panel" id="tab-promoter">
-                            <p class="testimonial-quote">
-                                "As a homemaker looking for flexible earnings, Shubh Labh provided the perfect training and product range. Today I coordinate sales across 5 districts in Punjab, feeling completely self-reliant!"
-                            </p>
-                            <div class="testimonial-author">
-                                <h4>Priya Sharma</h4>
-                                <p>Certified Senior Promoter, Punjab</p>
+
+                        <!-- Card 3: Business Partner -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-top">
+                                <span class="testimonial-category">Business Partner</span>
                             </div>
-                        </div>
-                        <div class="tab-panel" id="tab-partner">
-                            <p class="testimonial-quote">
+                            <blockquote class="testimonial-body">
                                 "Shubh Labh Distributions has significantly expanded our brand's reach. Their network of trained promoters delivers unparalleled quality representation, connecting us directly to target households."
-                            </p>
-                            <div class="testimonial-author">
-                                <h4>Amit Verma</h4>
-                                <p>Managing Director, Aviva Products</p>
+                            </blockquote>
+                            <div class="testimonial-footer">
+                                <div class="author-name">Vijayendra Shetty</div>
+                                <div class="author-role">Managing Director • Aviva Products, Mangaluru</div>
                             </div>
                         </div>
                     </div>
@@ -727,7 +936,7 @@
                         <div class="contact-left">
                             <div>
                                 <span class="section-label">Get In Touch</span>
-                                <h2 class="section-title">Contact Us</h2>
+                                <h2 class="section-title">Contact <span class="script-text text-accent">Us</span></h2>
                                 <p>Have inquiry queries? Whether you are a business looking to partner or an individual seeking career progression, our support channel is ready to assist.</p>
                             </div>
                             
@@ -738,7 +947,7 @@
                                     </div>
                                     <div class="contact-info">
                                         <h4>Phone Support</h4>
-                                        <p><a href="tel:+917483526536">+91 748-35-26-536</a></p>
+                                        <p><a href="tel:+918240633147">+91 82406 33147</a> / <a href="tel:+917483526536">+91 74835 26536</a></p>
                                     </div>
                                 </div>
                                 <div class="contact-item">
@@ -747,8 +956,7 @@
                                     </div>
                                     <div class="contact-info">
                                         <h4>Email Channels</h4>
-                                        <p><a href="mailto:shubhlabhdistributions@gmail.com">shubhlabhdistributions@gmail.com</a></p>
-                                        <p><a href="mailto:info@shubhlabhdist.com">info@shubhlabhdist.com</a></p>
+                                        <p><a href="mailto:Info@shubhlabhdistributions.com">Info@shubhlabhdistributions.com</a></p>
                                     </div>
                                 </div>
                                 <div class="contact-item">
@@ -757,7 +965,7 @@
                                     </div>
                                     <div class="contact-info">
                                         <h4>Office Address</h4>
-                                        <p>Sector 18, Chandigarh - 160018, India</p>
+                                        <p>Karnataka, India</p>
                                     </div>
                                 </div>
                             </div>
@@ -765,7 +973,7 @@
                             <!-- Styled Vector Map Representation (no external Google Map dependencies) -->
                             <div class="contact-map-mock">
                                 <h4>Headquarters Location Map</h4>
-                                <p>Sector 18, Chandigarh, Union Territory, India</p>
+                                <p>Karnataka, India</p>
                                 <div style="display: flex; align-items: center; gap: 8px; color: var(--text-primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">
                                     <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--accent-red); border-radius: 50%;"></span>
                                     Operational HQ Office
@@ -813,7 +1021,7 @@
                             </span>
                             <div class="contact-strip-text">
                                 <span>CALL US</span>
-                                <strong>+91 748-35-26-536</strong>
+                                <strong>+91 82406 33147 / +91 74835 26536</strong>
                             </div>
                         </div>
                         <div class="contact-strip-item">
@@ -822,7 +1030,7 @@
                             </span>
                             <div class="contact-strip-text">
                                 <span>EMAIL US</span>
-                                <strong>info@shubhlabhdist.com</strong>
+                                <strong>Info@shubhlabhdistributions.com</strong>
                             </div>
                         </div>
                         <div class="contact-strip-item">
@@ -831,7 +1039,7 @@
                             </span>
                             <div class="contact-strip-text">
                                 <span>VISIT US</span>
-                                <strong>Chandigarh, India</strong>
+                                <strong>Karnataka, India</strong>
                             </div>
                         </div>
                         <div class="contact-strip-item">
