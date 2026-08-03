@@ -43,38 +43,55 @@ try {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Mobile Menu Toggle & Click/Touch Outside Close
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinksList = navMenu ? navMenu.querySelector('.nav-links') : null;
+    // 1. Hero Popover Menu Toggle Logic (Floating directly above MENU button)
+    const menuToggle = document.getElementById('hero-menu-toggle');
+    const popoverMenu = document.getElementById('hero-popover-menu');
+    const popoverClose = document.getElementById('popover-close-btn');
 
-    if (mobileToggle && navLinksList) {
-        mobileToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinksList.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
-            if (scroller) scroller.update();
-        });
-
-        // Close menu automatically when clicking / tapping anywhere outside
-        document.addEventListener('click', (e) => {
-            if (navLinksList.classList.contains('active')) {
-                if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-                    navLinksList.classList.remove('active');
-                    mobileToggle.classList.remove('active');
-                }
+    function toggleHeroPopover(e) {
+        if (e) e.stopPropagation();
+        if (popoverMenu && menuToggle) {
+            const isActive = popoverMenu.classList.contains('active');
+            if (isActive) {
+                closeHeroPopover();
+            } else {
+                popoverMenu.classList.add('active');
+                popoverMenu.setAttribute('aria-hidden', 'false');
+                menuToggle.classList.add('active');
             }
-        });
-
-        document.addEventListener('touchstart', (e) => {
-            if (navLinksList.classList.contains('active')) {
-                if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-                    navLinksList.classList.remove('active');
-                    mobileToggle.classList.remove('active');
-                }
-            }
-        }, { passive: true });
+        }
     }
+
+    function closeHeroPopover() {
+        if (popoverMenu) {
+            popoverMenu.classList.remove('active');
+            popoverMenu.setAttribute('aria-hidden', 'true');
+        }
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+        }
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleHeroPopover);
+    if (popoverClose) popoverClose.addEventListener('click', closeHeroPopover);
+
+    // Close popover when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (popoverMenu && popoverMenu.classList.contains('active')) {
+            if (!popoverMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeHeroPopover();
+            }
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeHeroPopover();
+    });
+
+    // Close popover when clicking any link inside it
+    document.querySelectorAll('#hero-popover-menu [data-scroll-to]').forEach(link => {
+        link.addEventListener('click', closeHeroPopover);
+    });
 
     // 2. Smooth Scroll to Anchors
     document.querySelectorAll('[data-scroll-to]').forEach(link => {
@@ -97,8 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            navLinksList.classList.remove('active');
-            mobileToggle.classList.remove('active');
+            // Close any mobile nav menu if present
+            const activeNavLinks = document.querySelector('.nav-links.active');
+            if (activeNavLinks) activeNavLinks.classList.remove('active');
         });
     });
 
@@ -400,82 +418,58 @@ document.addEventListener('DOMContentLoaded', () => {
     rotateGreetings();
 
     // -------------------------------------------------------------
+    // Hero Video Audio Mute Toggle
+    // -------------------------------------------------------------
+    const heroBgVideo = document.getElementById('hero-bg-video');
+    const heroMuteBtn = document.getElementById('hero-mute-btn');
+    if (heroBgVideo && heroMuteBtn) {
+        const iconMuted = heroMuteBtn.querySelector('.icon-muted');
+        const iconUnmuted = heroMuteBtn.querySelector('.icon-unmuted');
+
+        heroMuteBtn.addEventListener('click', () => {
+            heroBgVideo.muted = !heroBgVideo.muted;
+            if (heroBgVideo.muted) {
+                if (iconMuted) iconMuted.style.display = 'block';
+                if (iconUnmuted) iconUnmuted.style.display = 'none';
+            } else {
+                if (iconMuted) iconMuted.style.display = 'none';
+                if (iconUnmuted) iconUnmuted.style.display = 'block';
+            }
+        });
+    }
+
+    // -------------------------------------------------------------
     // GSAP Micro-Animations
     // -------------------------------------------------------------
 
     const tlEntrance = gsap.timeline({ paused: true });
     
-    // Animate map background path outline
-    const mapPath = document.querySelector('.hero-background-svg path');
-    if (mapPath) {
-        const pathLength = mapPath.getTotalLength();
-        gsap.set(mapPath, {
-            strokeDasharray: pathLength,
-            strokeDashoffset: pathLength
-        });
-        tlEntrance.to(mapPath, {
-            strokeDashoffset: 0,
-            duration: 2.0,
-            ease: "power2.out"
-        });
-    }
-
-    // Entrance animation of text titles and floating visual elements
-    tlEntrance.from('.hero-tag', {
+    // Entrance animation for hero video card and overlay elements
+    tlEntrance.from('.hero-video-card', {
         opacity: 0,
-        x: -20,
-        duration: 0.6,
-        ease: "power2.out"
-    }, "-=1.2")
-    .from('.reveal-text', {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: "power2.out"
-    }, "-=1.0")
-    .from('.reveal-sub', {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: "power2.out"
-    }, "-=0.8")
-    .from('.hero-cta-group', {
-        opacity: 0,
-        y: 15,
-        duration: 0.6,
-        ease: "power2.out"
-    }, "-=0.6")
-    .from('.central-visual-circle', {
-        opacity: 0,
+        scale: 0.96,
         y: 30,
         duration: 1.0,
         ease: "power3.out"
-    }, "-=0.6")
-    .from('.anno-text', {
+    })
+    .from('.hero-tag-badge', {
         opacity: 0,
-        y: 20,
-        stagger: 0.1,
+        y: -15,
+        duration: 0.6,
+        ease: "power2.out"
+    }, "-=0.6")
+    .from('.hero-card-title', {
+        opacity: 0,
+        y: 30,
         duration: 0.8,
         ease: "power2.out"
     }, "-=0.4")
-    .from('.hero-tagline-footer', {
+    .from('.hero-card-footer', {
         opacity: 0,
+        y: 20,
         duration: 0.8,
         ease: "power2.out"
-    }, "-=0.2");
-
-    // Continuous, subtle organic floating drift for the annotations (No scale/bounce)
-    const floatingAnnos = document.querySelectorAll('.anno-text');
-    floatingAnnos.forEach(anno => {
-        gsap.to(anno, {
-            x: "random(-8, 8)",
-            y: "random(-8, 8)",
-            duration: "random(4, 7)",
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-    });
+    }, "-=0.4");
 
     // Scroll Triggered Numbers Counter Animation
     const stats = document.querySelectorAll('.stat-number');

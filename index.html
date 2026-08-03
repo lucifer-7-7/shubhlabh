@@ -73,139 +73,74 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#home" class="logo-wrapper" data-scroll-to>
-                <img src="imgs/c86b3fe3-6fb5-4a8b-8ae7-ba5879a8d2e1.png" alt="Shubh Labh Distributions" class="nav-brand-logo-img">
-                <!-- <div class="logo-text">
-                    <span class="logo-title">SHUBH LABH</span>
-                    <span class="logo-subtitle">DISTRIBUTIONS</span>
-                </div> -->
-            </a>
-            
-            <nav id="nav-menu">
-                <ul class="nav-links">
-                    <li><a href="#home" data-scroll-to>Home</a></li>
-                    <li><a href="#about" data-scroll-to>About Us</a></li>
-                    <li><a href="#categories-anchor" data-scroll-to>Services</a></li>
-                    <li><a href="#careers" data-scroll-to>Careers</a></li>
-                    <li><a href="#join" data-scroll-to>Work With Us</a></li>
-                    <li><a href="#contact" data-scroll-to>Contact Us</a></li>
-                    <!-- Mobile-only menu item -->
-                    <li class="mobile-only-login"><a href="#register" class="mobile-login-btn" data-scroll-to>Employee Login</a></li>
-                </ul>
-            </nav>
-            
-            <div class="nav-cta">
-                <a href="#register" class="btn btn-nav-login" data-scroll-to>Employee Login</a>
-            </div>
-
-            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
     <!-- Locomotive Scroll Container -->
     <div data-scroll-container id="js-scroll">
         <main>
-            
-            <!-- 1. Hero Section - Editorial Concept -->
+             <!-- 1. Hero Section - Video Container Concept -->
             <section id="home" class="hero-sec" data-scroll-section>
-                <!-- Subtle grid background lines -->
-                <svg viewBox="0 0 800 800" class="hero-background-svg" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern id="grid-dots" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <circle cx="2" cy="2" r="1" fill="#000000" opacity="0.05"/>
-                        </pattern>
-                        <!-- Glow filter for India border line -->
-                        <filter id="border-glow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="2" result="blur" />
-                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                        </filter>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-dots)" />
-                    
-                    <!-- Geometrically Accurate India Map vector outline path -->
-                    <path id="india-border-path" d="M 400 75 L 418 95 L 445 125 L 438 155 L 465 195 L 490 205 L 525 215 L 532 195 L 542 215 L 565 215 L 620 200 L 660 210 L 675 245 L 665 290 L 640 320 L 625 335 L 610 310 L 585 305 L 600 275 L 575 275 L 560 320 L 540 370 L 510 430 L 480 480 L 455 545 L 440 600 L 420 660 L 400 715 L 385 675 L 365 620 L 350 560 L 335 510 L 320 460 L 300 410 L 275 385 L 260 395 L 215 415 L 185 400 L 140 345 L 170 325 L 210 315 L 235 280 L 265 240 L 295 200 L 330 160 L 345 120 L 370 90 Z" fill="none" stroke="#D1D5DB" stroke-width="1.8" stroke-dasharray="6 4" />
-                    
-                    <!-- Animated Delivery Truck travelling along India map border -->
-                    <g class="moving-truck-group">
-                        <!-- Outer pulsing aura circle -->
-                        <circle cx="0" cy="0" r="14" fill="#E11D48" opacity="0.25">
-                            <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite" />
-                            <animate attributeName="opacity" values="0.35;0.08;0.35" dur="2s" repeatCount="indefinite" />
-                        </circle>
-                        <!-- Solid red badge circle -->
-                        <circle cx="0" cy="0" r="11" fill="#E11D48" />
-                        <!-- Crisp white delivery truck icon SVG -->
-                        <g transform="translate(-7, -6) scale(0.65)">
-                            <path d="M1 3h10v8H1z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
-                            <path d="M11 6h4l3 3v3h-7z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/>
-                            <circle cx="4.5" cy="11.5" r="1.5" fill="#FFFFFF"/>
-                            <circle cx="15" cy="11.5" r="1.5" fill="#FFFFFF"/>
-                        </g>
-                        <!-- Motion along path -->
-                        <animateMotion dur="22s" repeatCount="indefinite" rotate="auto">
-                            <mpath href="#india-border-path"/>
-                        </animateMotion>
-                    </g>
-                </svg>
+                <div class="container hero-video-container">
+                    <div class="hero-video-card">
+                        <!-- Background Video -->
+                        <video id="hero-bg-video" autoplay loop muted playsinline class="hero-bg-video">
+                            <source src="Create_a_clean_D_animated_top.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="hero-video-overlay"></div>
 
-                <div class="container" style="position: relative;">
-                    <div class="hero-content">
-                        <div class="hero-tag">
-                            <span class="join-bullet-icon">✦</span> National Employment &amp; Distribution Initiative
-                        </div>
-                        <div class="hero-title-group">
-                            <h1 class="reveal-text">
-                                Empowering India <br>Through Job Creation &amp; <br>
-                                <span class="script-text">Customer Trust</span>
+                        <!-- Top Title & Header -->
+                        <div class="hero-card-header">
+                            <h1 class="hero-card-title">
+                                <span class="hero-title-line-1">EMPOWERING</span>
+                                <span class="hero-title-line-2">INDIA WITH</span>
+                                <span class="hero-title-line-3 script-text hero-script">Jobs &amp; Trust</span>
                             </h1>
                         </div>
-                        <p class="hero-subheading reveal-sub">
-                            Shubh Labh Distributions creates meaningful employment opportunities and delivers quality FMCG products, empowering workforce talent and serving customer households across India.
-                        </p>
-                        <div class="hero-cta-group">
-                            <a href="#register" class="btn btn-primary" data-scroll-to>Apply For Position</a>
-                            <a href="#careers" class="btn btn-outline-white" data-scroll-to>Explore Careers</a>
-                        </div>
-                        <div class="hero-tagline-footer">
-                            <div class="hero-tagline-text uppercase tracking-wide">Your Growth, Our Responsibility</div>
-                            <div class="hero-tagline-hindi">| आपकी तरक्की, हमारी ज़िम्मेदारी</div>
-                        </div>
-                    </div>
 
-                    <!-- Asymmetric Floating Annotations Layout -->
-                    <div class="hero-right-visual">
-                        <!-- Central Red Visual -->
-                        <div class="central-visual-circle">
-                            SL
-                        </div>
-                        
-                        <!-- Floating Text Annotations -->
-                        <div class="anno-text anno-top">
-                            SHUBH LABH DISTRIBUTIONS<br>
-                            <span class="anno-sub">ESTD 2026 • KARNATAKA</span>
-                        </div>
-                        <div class="anno-text anno-mid-left">
-                            10,000+ JOBS CREATED<br>
-                            <span class="anno-sub">EMPLOYMENT CREATION</span>
-                        </div>
-                        <div class="anno-text anno-mid-right">
-                            1M CUSTOMERS<br>
-                            <span class="anno-sub">AIMING FOR CUSTOMERS</span>
-                        </div>
-                        <div class="anno-text anno-bot-left">
-                            10+ STATES COVERED<br>
-                            <span class="anno-sub">PAN INDIA REACH</span>
-                        </div>
-                        <div class="anno-text anno-bot-right">
-                            50+ PRODUCTS<br>
-                            <span class="anno-sub">QUALITY RETAILING</span>
+                        <!-- Bottom Controls & Navigation (3-Column Grid Alignment) -->
+                        <div class="hero-card-footer">
+                            <!-- Bottom Left: Company Logo (imgs/ChatGPT Image Aug 3, 2026, 04_54_00 AM.png) -->
+                            <div class="hero-footer-left">
+                                <a href="#home" class="hero-card-logo-link" data-scroll-to aria-label="Shubh Labh Distributions Home">
+                                    <img src="imgs/ChatGPT Image Aug 3, 2026, 04_54_00 AM.png" alt="Shubh Labh Distributions" class="hero-card-logo-img">
+                                </a>
+                            </div>
+
+                            <!-- Bottom Center: Mathematically Centered Pill Bar with Popover Menu Above It -->
+                            <div class="hero-footer-center">
+                                <div class="hero-pill-wrapper">
+                                    <!-- Popover Menu floating directly ABOVE the MENU button -->
+                                    <div id="hero-popover-menu" class="hero-popover-menu" aria-hidden="true">
+                                        <div class="popover-header">
+                                            <span class="popover-title">Navigation</span>
+                                            <button id="popover-close-btn" class="popover-close-btn" aria-label="Close Menu">✕</button>
+                                        </div>
+                                        <ul class="popover-links">
+                                            <li><a href="#home" data-scroll-to>HOME</a></li>
+                                            <li><a href="#about" data-scroll-to>ABOUT US</a></li>
+                                            <li><a href="#categories-anchor" data-scroll-to>SERVICES</a></li>
+                                            <li><a href="#careers" data-scroll-to>CAREERS</a></li>
+                                            <li><a href="#join" data-scroll-to>WORK WITH US</a></li>
+                                            <li><a href="#contact" data-scroll-to>CONTACT US</a></li>
+                                        </ul>
+                                        <div class="popover-cta">
+                                            <a href="#register" class="btn btn-popover-login" data-scroll-to>EMPLOYEE LOGIN</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2-Item Pill Bar -->
+                                    <div class="hero-pill-bar">
+                                        <a href="#contact" class="hero-pill-btn primary" data-scroll-to>CONTACT</a>
+                                        <button id="hero-menu-toggle" class="hero-pill-btn menu-btn" type="button" aria-label="Toggle Navigation Menu">MENU</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Right: Description Info -->
+                            <div class="hero-footer-right">
+                                <div class="hero-footer-info">
+                                    Creating 10,000+ jobs &amp; delivering quality FMCG products across India.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -258,15 +193,9 @@
                             <!-- Card 1: Chocolate -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=600&q=80" alt="Chocolate" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/chocolate.png" alt="Chocolate" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
@@ -282,15 +211,9 @@
                             <!-- Card 2: Perfume -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80" alt="Perfume" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/perfume.png" alt="Perfume" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
@@ -306,15 +229,9 @@
                             <!-- Card 3: Personal Care -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Personal Care" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/personalhygeine.png" alt="Personal Care" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
@@ -330,15 +247,9 @@
                             <!-- Card 4: Home Care -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="Home Care" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/household.png" alt="Home Care" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
@@ -354,15 +265,9 @@
                             <!-- Card 5: Health & Wellness -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Health & Wellness" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/health.png" alt="Health & Wellness" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
@@ -378,15 +283,9 @@
                             <!-- Card 6: Beauty Care -->
                             <div class="category-card">
                                 <div class="category-card-img-wrap">
-                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="Beauty Care" class="category-card-img">
+                                    <img src="imgs/PRODUCTS/makeup.png" alt="Beauty Care" class="category-card-img">
                                     <div class="category-brand-badge">
                                         <img src="imgs/no_bg_logo.png" alt="Shubh Labh" class="category-brand-badge-img">
-                                    </div>
-                                    <div class="category-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
                                     </div>
                                 </div>
                                 <div class="category-card-content">
